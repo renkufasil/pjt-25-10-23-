@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './login.css'
 import { useNavigate } from 'react-router-dom';
-const Login = () => {
+const Login = (props) => {
 const [un,setUn]=useState('');
 const [ps,setPwd]=useState('');
 const [error,setError]=useState(false);
@@ -10,7 +10,8 @@ const navigate=useNavigate();
 const readusername=(event) =>{
     event.preventDefault();
     setUn(event.target.value);
-   // console.log(event.target.value);
+
+  
 }
 const readpassword=(event) =>{
     event.preventDefault();
@@ -32,6 +33,7 @@ navigate('/home');
 }
   return (
     <div>
+      <h1>{ props.a}</h1>
         <h1 className='aa'>SIGN - IN</h1>
         <form>
             <div className='bb'>
